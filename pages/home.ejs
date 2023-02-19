@@ -1,0 +1,76 @@
+
+<%- include('partials/header.ejs') %>
+
+<section class="noticia-destaque">
+    <div class="center">
+
+        <div class="img-destaque">
+
+            <img src="<%= posts[0].imagem %>" />
+
+            <div class="title-destaque-descricao">
+                <a href="<%= posts[0].slug %>"><h2><%= posts[0].titulo %></h2></a>
+                <p><%= posts[0].descricaoCurta %>...</p>
+            </div>
+  
+        </div>
+
+    </div>
+</section>
+
+<section class="outras-noticias">
+    <div class="title-outras-noticia">
+        <h2>Últimas publicações</h2>
+       
+        <div class="center">
+            <div class="ultimas">
+                <% { %>
+                    <% posts.length = 3 %>
+                    <% for (let i = 1; i < posts.length; i++) { %>
+                        <div class="box-ultima-single">
+                            <img src="<%= posts[i].imagem %>" />
+                            <div class="conteudo-noticia-single">
+                                <h3><%= posts[i].categoria %></h3>
+                                <h2><%= posts[i].titulo %></h2>
+                                <p><%= posts[i].descricaoCurta %>...</p>
+                                <div class="link">
+                                    <a href="<%= posts[i].slug %>">Ler mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                <% } %>
+
+            </div>
+            
+            <div class="mais-lidas">
+                <h3>AS MAIS LIDAS</h3>
+                <div class="mais-lidas-noticias">
+
+                    <% for(let i = 0; i < postsTop.length; i++) { %>
+                        <div class="mais-lida-noticia-single">
+                            <img src="<%= postsTop[i].imagem %>"/>
+
+                            <div class="texto-mais-lida-single">
+                                <a href="<%= postsTop[i].slug %>">
+                                    <h4><%= postsTop[i].titulo %></h4>
+                                </a>
+                                <p><%= postsTop[i].descricaoCurta %>...<span> (<%= postsTop[i].views %>)views</span></p>
+                                
+                            </div>
+
+                        </div>
+                    <% } %>
+                    
+                </div>
+            </div>
+
+
+            
+            
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer.ejs') %>
+
