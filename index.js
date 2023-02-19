@@ -37,7 +37,8 @@ app.get('/', (req, res) => {
                     categoria: value.categoria,
                     conteudo: value.conteudo,
                     slug: value.slug,
-                    descricaoCurta: value.conteudo.substring(0, 186)
+                    descricaoCurta: value.conteudo.substring(0, 186),
+                    tituloCurto: value.titulo.substring(0, 38),
                 }
             })
             Posts.find({}).sort({'views': -1}).limit(3).exec((err,postsTop) => {

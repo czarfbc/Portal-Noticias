@@ -9,7 +9,7 @@
             <img src="<%= posts[0].imagem %>" />
 
             <div class="title-destaque-descricao">
-                <a href="<%= posts[0].slug %>"><h2><%= posts[0].titulo %></h2></a>
+                <a href="<%= posts[0].slug %>"><h2><%= posts[0].tituloCurto %></h2></a>
                 <p><%= posts[0].descricaoCurta %>...</p>
             </div>
   
@@ -23,15 +23,16 @@
         <h2>Últimas publicações</h2>
        
         <div class="center">
-            <div class="ultimas">
+            <div class="ultimas-first-row">
                 <% { %>
-                    <% posts.length = 3 %>
-                    <% for (let i = 1; i < posts.length; i++) { %>
+                    <% let posts_first_row = posts.length  %>
+                    <% posts_first_row = 3  %>
+                    <% for (let i = 1; i < posts_first_row; i++) { %>
                         <div class="box-ultima-single">
                             <img src="<%= posts[i].imagem %>" />
                             <div class="conteudo-noticia-single">
                                 <h3><%= posts[i].categoria %></h3>
-                                <h2><%= posts[i].titulo %></h2>
+                                <h2><%= posts[i].tituloCurto %></h2>
                                 <p><%= posts[i].descricaoCurta %>...</p>
                                 <div class="link">
                                     <a href="<%= posts[i].slug %>">Ler mais</a>
@@ -66,11 +67,28 @@
             </div>
 
 
-            
+            <div class="ultimas-second-row-next">             
+                
+                <% for (let i = 3; i < posts.length; i++) { %>
+                    <div class="box-ultima-single">
+                        <img src="<%= posts[i].imagem %>" />
+                        <div class="conteudo-noticia-single">
+                            <h3><%= posts[i].categoria %></h3>
+                            <h2><%= posts[i].tituloCurto %></h2>
+                            <p><%= posts[i].descricaoCurta %>...</p>
+                            <div class="link">
+                                <a href="<%= posts[i].slug %>">Ler mais</a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+
+            </div>
             
         </div>
     </div>
 </section>
+
 
 <%- include('partials/footer.ejs') %>
 
