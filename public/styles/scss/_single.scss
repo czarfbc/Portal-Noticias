@@ -1,0 +1,104 @@
+section.noticia
+{
+    padding: 3.5rem 6.6rem 8.2rem;
+    background-color: #EAEAEA;
+
+    .center
+    {
+        gap: 30px;
+
+        .noticia-single
+        {
+            width: 68%;
+            padding: 2.6rem 4.3rem 4.9rem;
+            border-radius: 10px;
+            background-color: #fff;
+
+            h2 
+            {
+                font-size:4.2rem;
+                color: #303336;
+                font-weight: 700;
+            }
+            .autor-nome
+            {
+                margin: 3.3rem 0;
+
+                span 
+                {  
+                    font-size: 2rem;
+                    color: #7B8591;
+                }
+            }
+            img 
+            {
+                object-fit: cover;
+                image-rendering: pixelated;
+                width: 100%;
+                height: 50%;
+                border-radius: 10px;
+            }
+            p 
+            {
+                margin-top: 3.3rem;
+                font-size: 2rem;
+                color: #7B8591;
+            }
+        }
+        .mais-lidas
+        {
+            width: 32%;
+            border-radius: 10px;
+            background-color: #3F51B5;
+            height: fit-content;
+
+            .mais-lidas-noticias
+            {
+                background-color: #fff;
+                border-radius: 10px;
+
+                .mais-lida-noticia-single
+                {
+                    padding: 4.1rem;
+                    display: flex;
+                    gap: 30px;
+                    align-items: center;
+
+                    img 
+                    {
+                        border-radius: 10px;
+                        width: 55%;
+                        height: 188px;
+                    }
+                    a 
+                    {
+                        text-decoration: none;
+                        h4 
+                        {
+                            font-size: 1.6rem;
+                            letter-spacing: 3.6px;
+                            color: #0072CA;
+                            font-weight: 700;
+                        }
+                    }
+                    p 
+                    {
+                        font-size: 1.8rem;
+                        text-align: justify;
+                        color: #7B8591;
+                    }
+                  
+                }
+            }
+            h3 
+            {
+                margin: 2.6rem 0;
+                text-align: center;
+                color: #fff;
+                font-size: 2.7rem;
+                letter-spacing: 1.35px;
+            }
+            
+        }
+    }
+}

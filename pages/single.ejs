@@ -3,14 +3,15 @@
 
 <section class="noticia">
     <div class="center">
+
         <div class="noticia-single">
+
             <h2><%= noticia.titulo %></h2>
             <div class="autor-nome">
-                <span><%= noticia.autor %></span>
+                <span><strong>Autor(a): </strong><%= noticia.autor %></span>
             </div>
             <img src="<%= noticia.imagem %>"/>
             <p><%= noticia.conteudo %></p>
-            
 
         </div>
         
@@ -23,20 +24,20 @@
                     <div class="mais-lida-noticia-single">
                         <img src="<%= postsTop[i].imagem %>" />
                         <div class="texto-mais-lida-single">
-
-                            <h4><%= postsTop[i].titulo %></h4>
-                            <p><%= postsTop[i].desricaoCurta %>...<span>(<%= postsTop[i].views %>)views</span></p>
-                            <a href="<%= postsTop[i].slug %>">Saiba mais</a>
+                            <a href="<%= postsTop[i].slug %>">
+                                <h4><%= postsTop[i].titulo %></h4>
+                            </a>
+                            <p><%= postsTop[i].descricaoCurta %>...<span>(<%= postsTop[i].views %>)views</span></p>
+                            
                         </div>
                     </div>
                 <% } %>
             </div>
+
         </div>
+
     </div>
 </section>
 
 
 <%- include('partials/footer.ejs') %>
-
-</body>
-</html>

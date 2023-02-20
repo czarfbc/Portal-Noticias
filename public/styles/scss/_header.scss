@@ -1,0 +1,103 @@
+header
+{
+    padding: 2.25rem 7.3rem;
+    background-color: #0AACDC;
+    .center
+    {
+        align-items: center;
+        justify-content: space-between;
+
+        .menu-wrapper
+        {
+            width: 20%;
+        }
+        .menu
+        {
+            position: relative;
+            width: 2.6rem;
+            background-color: #fff;
+            height: 0.4rem;
+        }
+        .menu::before
+        {
+            content: '';
+            position: absolute;
+            top: -8px;
+            width: inherit;
+            background-color: inherit;
+            height: inherit;
+        }
+        .menu::after
+        {
+            content: '';
+            position: absolute;
+            top: 8px;
+            width: 1.8rem;
+            background-color: inherit;
+            height: inherit;
+        }
+        .logo
+        {
+            text-align: center;
+            width: 60%;
+           
+            h1
+            {
+                font-weight: 400;
+                font-size: 3.9rem;
+                
+                a
+                {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+        .form-busca
+        {
+            display: flex;
+            justify-content: end;
+            width: 20%;
+
+            form
+            {
+                display: flex;
+                align-items: center;
+                padding: 1.65rem 2.1rem;
+                width: 21.4rem;
+                border-radius: 10px;
+                background-color: #008BB4;
+
+                label
+                {
+                    cursor: pointer;
+                    i 
+                    {
+                        color: #fff;
+                        font-size: 2.7rem
+                    }
+                }
+                
+
+                input
+                {
+                    color: #fff;
+                    padding-left: 1.95rem;
+                    border: none;
+                    outline: none;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    width: 100%;
+                    background-color: #008BB4;
+
+                    
+                }
+                input::placeholder
+                {
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+}

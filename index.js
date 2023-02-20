@@ -82,7 +82,7 @@ app.get('/', (req, res) => {
 app.get('/:slug', (req, res)=>{
     Posts.findOneAndUpdate({slug: req.params.slug}, {$inc: {views: 1}}, {new: true}, (err, response) => {
         if(response != null) {
-            Posts.find({}).sort({'views': -1}).limit(2).exec((err,postsTop) => {
+            Posts.find({}).sort({'views': -1}).limit(4).exec((err,postsTop) => {
                 postsTop = postsTop.map((value) => {
                     return {
                         titulo: value.titulo,
