@@ -3,14 +3,14 @@
 
    
 
-<section class="outras-noticias">
+<section class="busca-noticias">
     <div class="title-outras-noticia">
         <h2>Busca:</h2>
-        <br><br>
+        
         <div class="center">
             
-            <div style="width:100%;" class="mais-lidas">
-                <h3><%= count %></h3>resultados</h3>
+            <div class="mais-lidas">
+                <h3><%= count %> resultados</h3>
                 <div class="mais-lidas-noticias">
 
 
@@ -18,9 +18,10 @@
                         <div class="mais-lida-noticia-single">
                             <img src="<%= posts[i].imagem %>" />
                             <div class="texto-mais-lida-single">
-                                <h4><%= posts[i].titulo %></h4>
-                                <p><%= posts[i].descricaoCurta %>...</p>
-                                <a href="<%= posts[i].slug %>">Saiba mais</a>
+                                <a href="<%= posts[i].slug %>">
+                                    <h4><%= posts[i].titulo %></h4>
+                                </a>
+                                <p><%= posts[i].descricaoCurta %>...</p>                          
                             </div>
                         </div>
                     <% } %>
@@ -34,6 +35,3 @@
 </section>
 
 <%- include('partials/footer.ejs') %>
-
-</body>
-</html>

@@ -65,13 +65,13 @@ app.get('/', (req, res) => {
                     categoria: value.categoria,
                     conteudo: value.conteudo,
                     slug: value.slug,
-                    descricaoCurta: value.conteudo.substring(0, 186),
+                    descricaoCurta: value.conteudo.substring(0, 350),
                     views: value.views,
                 }
             })
             res.render('busca', {posts: posts, count: posts.length});
             
-        })
+        }).sort({'_id': -1});
         
     } 
 });

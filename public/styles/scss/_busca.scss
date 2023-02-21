@@ -1,0 +1,79 @@
+section.busca-noticias
+{
+    padding: 6.6rem;
+    background-color: #EAEAEA;
+
+    .title-outras-noticia
+    {
+        > h2 
+        {
+            text-align: center;
+            font-size: 6.4rem;
+            font-weight:  700;
+            margin-bottom: 8rem;
+        }
+
+        .center
+        {
+                     
+            .mais-lidas
+            {
+                width: 100%;
+                border-radius: 10px;
+                background-color: #3F51B5;
+
+                h3 
+                {
+                    text-align: center;
+                    margin: 2.6rem 0;
+                    font-size: 3.5rem;
+                    letter-spacing: 1.35px;
+                    color: #fff;
+                }
+
+                .mais-lidas-noticias
+                {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 3.6rem;
+                    padding: 4.1rem 9rem 7.9rem;
+                    border-radius: 10px;
+                    background-color: #fff;
+
+                    .mais-lida-noticia-single
+                    {
+                        display: flex;
+                        gap: 3.6rem;
+
+                        img 
+                        {
+                            width: 25%;
+                            border-radius: 10px;
+                        }
+                        .texto-mais-lida-single
+                        {
+                        
+                            a 
+                            {
+                                text-decoration: none;
+                                color: #000;
+
+                                h4 
+                                {
+                                    letter-spacing: 3.2px;
+                                    font-size: 2.5rem;
+                                    margin-bottom: 2.1rem;
+                                }
+                            }
+                            
+                            p 
+                            {
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
