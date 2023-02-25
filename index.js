@@ -5,6 +5,9 @@ const path = require('path');
 
 const app = express();
 const Posts = require('./Posts.js');
+
+var session = require('express-session')
+
 const urlDatabase = 'mongodb+srv://root:fera1020@cluster0.xlmnqqp.mongodb.net/news?retryWrites=true&w=majority';
 
 
@@ -17,6 +20,7 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, '/pages'));
 
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
 
 mongoose.connect(urlDatabase, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log('conectado com sucesso');
@@ -103,6 +107,29 @@ app.get('/:slug', (req, res)=>{
     })
 })
 
+
+var users = [{
+    user: 'czar',
+    password: '1234',
+}];
+
+app.post('/admin/login', (req, res) => {
+    users.map((value) => {
+        if(value.user == req.body.login && value.password == req.body.senha) {
+            req.session.login = 'czar';
+        }
+    })
+    res.redirect('/admin/login')
+})
+
+
+app.get('/admin/login', (req, res) => {
+    if(req.session.login == null) {
+        res.render('admin-login');
+    }else{
+        res.render('admin-painel');
+    }
+})
 
 
 app.listen(5000, () => {
