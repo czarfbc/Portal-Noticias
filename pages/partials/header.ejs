@@ -39,15 +39,10 @@
     <script>
         const menu = document.querySelector('.fa-bars-home')
         menu.addEventListener('click',()=>{
-            let asideContainer = document.querySelector('.container');
             
-            if(asideContainer.classList.contains('mostrar')){
-                asideContainer.classList.remove('mostrar');
-                asideContainer.classList.add('ocultar');
-            }else{
-                asideContainer.classList.add('mostrar');
-                asideContainer.classList.remove('ocultar');
-            }
+            let asideContainer = document.querySelector('.container');
+            asideContainer.classList.toggle('mostrar');
+
 
             const itenSolo = document.querySelectorAll('.itemSolo')
             itenSolo.forEach((elemento)=>{
