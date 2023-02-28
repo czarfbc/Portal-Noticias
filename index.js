@@ -127,8 +127,12 @@ app.get('/admin/login', (req, res) => {
     if(req.session.login == null) {
         res.render('admin-login');
     }else{
-        res.render('admin-painel');
+         res.render('admin-painel');
     }
+})
+
+app.post('/admin/cadastro', (req, res) => {
+    
 })
 
 

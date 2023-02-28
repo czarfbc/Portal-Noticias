@@ -9,38 +9,57 @@ header
 
         .menu-wrapper
         {
-            width: 20%;
-        }
-        .menu
-        {
             position: relative;
-            width: 2.6rem;
-            background-color: #fff;
-            height: 0.4rem;
-        }
-        .menu::before
-        {
-            content: '';
-            position: absolute;
-            top: -8px;
-            width: inherit;
-            background-color: inherit;
-            height: inherit;
-        }
-        .menu::after
-        {
-            content: '';
-            position: absolute;
-            top: 8px;
-            width: 1.8rem;
-            background-color: inherit;
-            height: inherit;
+            width: 20%;
+        
+            .fa-bars-home
+            {
+                color: #fff;
+                font-size: 2.6rem;
+                cursor: pointer;
+            }
+            .container{
+                position: absolute;
+                height: fit-content;
+                width: fit-content; 
+                padding: 2rem;
+                display: none;
+                background-color: #0AACDC;
+                border: 1px solid #000;
+                left: 0;
+                top: 30px;
+
+                .itens-menu
+                {     
+                    
+                    list-style: none;
+                    .itemSolo
+                    {
+                        margin-bottom: 0.5rem;
+                        border: 1px solid #000;
+                        padding: 0.5rem;
+
+                        a 
+                        {
+                            text-decoration: none;
+                            color: #fff;
+                            font-size: 2rem;
+                            font-weight: 500;
+                        }
+                    }
+                    .itemSolo:hover
+                    {
+                        transform: scale(1.1);
+                        border: 2px solid #000;
+                    }
+                }
+            }
         }
         .logo
         {
             text-align: center;
             width: 60%;
-           
+        
             h1
             {
                 font-weight: 400;
@@ -98,6 +117,9 @@ header
                 }
             }
         }
+
+        .mostrar{display: flex !important; justify-content: center !important;}
+        .ocultar{display: none;}
     }
 
 }

@@ -7,14 +7,20 @@
     <script src="https://kit.fontawesome.com/fd1cb3abbc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/public/styles/index.css">
     <title>Document</title>
+    
 </head>
 <body>
     <header>
         <div class="center">
-            <div class="menu-wrapper">
-                <div class="menu"></div>
-            </div>
-
+            <nav class="menu-wrapper">
+                <i class="fa-solid fa-bars fa-bars-home"></i>
+                <div class="container">
+                    <ul class="itens-menu">
+                        <li class="itemSolo"><a href="/admin/login">ADMIN</a></li>
+                    </ul>   
+                </div>
+            </nav>
+           
             <div class="logo">
                 <h1><a href="/">New<strong>News</strong></a></h1>
             </div>
@@ -30,3 +36,25 @@
 
         </div>
     </header>
+    <script>
+        const menu = document.querySelector('.fa-bars-home')
+        menu.addEventListener('click',()=>{
+            let asideContainer = document.querySelector('.container');
+            
+            if(asideContainer.classList.contains('mostrar')){
+                asideContainer.classList.remove('mostrar');
+                asideContainer.classList.add('ocultar');
+            }else{
+                asideContainer.classList.add('mostrar');
+                asideContainer.classList.remove('ocultar');
+            }
+
+            const itenSolo = document.querySelectorAll('.itemSolo')
+            itenSolo.forEach((elemento)=>{
+                elemento.addEventListener('click',()=>{
+                    itensMenu.classList.remove('mostrar');
+                    itensMenu.classList.add('ocultar');
+                })
+            })
+        })
+    </script>

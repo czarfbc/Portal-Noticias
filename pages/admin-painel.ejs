@@ -4,9 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fd1cb3abbc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/styles/index.css">
     <title>admin-painel</title>
 </head>
 <body>
-    <h1>LOGADO COM SUCESSO kkk</h1>
+
+    <section class="section-publicar-noticia">
+        <div class="header-fomr-publicar">
+
+            <nav class="menu-wrapper">
+                <i class="fa-solid fa-bars fa-bars-adm"></i>
+                <div class="container">
+                    <ul class="itens-menu">
+                        <li class="itemSolo"><a href="/">HOME</a></li>
+                    </ul>   
+                </div>
+            </nav>
+
+            <h1>CADASTRAR NOTICIA</h1>
+        </div>
+
+        <form method="post" action="/admin/cadastro" class="form-publicar">
+            <input type="text" name="titulo_noticia" placeholder="Titulo da Noticia">
+            <input type="text" name="url_imagem" placeholder="Link da Imagem da Noticia">
+            <textarea name="noticia" placeholder="Noticia"></textarea>
+            <input type="submit" name="acao" value="Cadastrar">
+        </form>
+
+    </section>
+
+    <section class="section-lista-noticia">
+        <div class="titulo-lista-noticia">
+            <h2>LISTA DE NOTICIAS</h2>
+        </div>
+
+        <div class="form-busca">
+            <form>
+                <label for="input">
+                    <i class="fa-solid fa-magnifying-glass"></i>    
+                </label>
+                <input name="busca" type="text" placeholder="Buscar" id="input" />
+            </form>
+        </div>
+
+
+        <div class="div-lista-noticias">
+            <ul>
+                <li>
+
+                    <div class="lista-noticia-single">
+                        <p><strong>TITULO: </strong>CAPA CAPA XANDAO</p>
+                        <div class="links-acao-noticia-single">
+                            <a href="/admin/editar/10" title="EDITAR"><i class="fa-solid fa-pen"></i></a>
+                            <a href="/admin/deletar/10" title="EXCLUIR"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                   
+                </li>
+            </ul>
+        </div>
+
+
+    </section>
+
+    <script>
+        const menu = document.querySelector('.fa-bars-adm')
+        menu.addEventListener('click',()=>{
+            let asideContainer = document.querySelector('.container');
+            
+            
+            if(asideContainer.classList.contains('mostrar')){
+                
+                asideContainer.classList.add('ocultar');
+                asideContainer.classList.remove('mostrar');
+            }else{
+                asideContainer.classList.add('mostrar');
+                asideContainer.classList.remove('ocultar');
+           
+            }
+
+            const itenSolo = document.querySelectorAll('.itemSolo')
+            itenSolo.forEach((elemento)=>{
+                elemento.addEventListener('click',()=>{
+                    itensMenu.classList.remove('mostrar');
+                    itensMenu.classList.add('ocultar');
+                })
+            })
+        })
+    </script>
 </body>
 </html>
