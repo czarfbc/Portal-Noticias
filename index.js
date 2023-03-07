@@ -132,7 +132,18 @@ app.get('/admin/login', (req, res) => {
 })
 
 app.post('/admin/cadastro', (req, res) => {
+
+    Posts.create({
+        titulo: req.body.titulo_noticia,
+        imagem: req.body.url_imagem,
+        categoria: req.body.categoria_noticia,
+        conteudo: req.body.noticia,
+        slug: req.body.slug_cadastro_noticia,
+        autor: req.body.autor_noticia,
+        views: 0,
+    })
     
+    res.redirect('back')
 })
 
 

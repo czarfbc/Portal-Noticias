@@ -26,9 +26,12 @@
         </div>
 
         <form method="post" action="/admin/cadastro" class="form-publicar">
-            <input type="text" name="titulo_noticia" placeholder="Titulo da Noticia">
-            <input type="text" name="url_imagem" placeholder="Link da Imagem da Noticia">
-            <textarea name="noticia" placeholder="Noticia"></textarea>
+            <input type="text" name="titulo_noticia" placeholder="Titulo da Noticia" required>
+            <input type="text" name="url_imagem" placeholder="Link da Imagem da Noticia" required>
+            <input type="text" name="slug_cadastro_noticia" placeholder="Slug da Noticia" required>
+            <input type="text" name="categoria_noticia" placeholder="Categoria da Noticia" required>
+            <input type="text" name="autor_noticia" placeholder="Autor da Noticia" required>
+            <textarea name="noticia" placeholder="Noticia" required></textarea>
             <input type="submit" name="acao" value="Cadastrar">
         </form>
 
