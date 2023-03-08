@@ -10,7 +10,7 @@
         <div class="center">
             
             <div class="mais-lidas">
-                <h3><%= count %> resultados</h3>
+                <h3><%= countTotal %>  resultados</h3>
                 <div class="mais-lidas-noticias">
 
 
@@ -21,12 +21,29 @@
                                 <a href="<%= posts[i].slug %>">
                                     <h4><%= posts[i].titulo %></h4>
                                 </a>
+                               
+                                <h5><%= posts[i].categoria %></h5>
+                                
                                 <p><%= posts[i].descricaoCurta %>...</p>                          
                             </div>
                         </div>
                     <% } %>
-                    
 
+
+                    <% for (let i = 0; i < postsCategoria.length; i++) { %>
+                        <div class="mais-lida-noticia-single">
+                            <img src="<%= postsCategoria[i].imagem %>" />
+                            <div class="texto-mais-lida-single">
+                                <a href="<%= postsCategoria[i].slug %>">
+                                    <h4><%= postsCategoria[i].titulo %></h4>
+                                </a>
+                               
+                                <h5><%= postsCategoria[i].categoria %></h5>
+                                
+                                <p><%= postsCategoria[i].descricaoCurta %>...</p>                          
+                            </div>
+                        </div>
+                    <% } %>
                     
                 </div>
             </div>

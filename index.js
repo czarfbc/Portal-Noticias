@@ -73,7 +73,21 @@ app.get('/', (req, res) => {
                     views: value.views,
                 }
             })
-            res.render('busca', {posts: posts, count: posts.length});
+            Posts.find({categoria: {$regex: req.query.busca, $options: 'i'}}, (err,postsCategoria) => {
+                postsCategoria = postsCategoria.map((value) => {
+                    return {
+                        titulo: value.titulo,
+                        imagem: value.imagem,
+                        categoria: value.categoria,
+                        conteudo: value.conteudo,
+                        slug: value.slug,
+                        descricaoCurta: value.conteudo.substring(0, 100),
+                        views: value.views,
+                    }
+                })
+                res.render('busca', {posts: posts, postsCategoria: postsCategoria, countTotal: posts.length + postsCategoria.length}); 
+            }) 
+            // res.render('busca', {posts: posts, count: posts.length});
             
         }).sort({'_id': -1});
         

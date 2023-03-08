@@ -52,7 +52,14 @@ section.busca-noticias
                         }
                         .texto-mais-lida-single
                         {
-                        
+                            
+                            
+                          
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                    
                             a 
                             {
                                 text-decoration: none;
@@ -63,7 +70,17 @@ section.busca-noticias
                                     letter-spacing: 3.2px;
                                     font-size: 2.5rem;
                                     margin-bottom: 2.1rem;
+                                    font-weight: 700;
                                 }
+                            }
+
+                            h5
+                            {
+                                
+                                letter-spacing: 3.2px;
+                                font-size: 2.1rem;
+                                color: #33439B;
+                                font-weight: 700;
                             }
                             
                             p 
