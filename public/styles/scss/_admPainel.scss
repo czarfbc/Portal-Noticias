@@ -100,7 +100,7 @@ section.section-publicar-noticia
             height: 10%;
         }
     }
-    .mostrar{display: flex; justify-content: center;}
+    .mostrar{display: flex !important; justify-content: center;}
 }
 
 section.section-lista-noticia

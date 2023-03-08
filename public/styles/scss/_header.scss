@@ -118,6 +118,6 @@ header
             }
         }
 
-        .mostrar{display: flex; justify-content: center;}
+        .mostrar{display: flex !important; justify-content: center;}
     }
 }

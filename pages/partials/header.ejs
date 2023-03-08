@@ -47,8 +47,7 @@
             const itenSolo = document.querySelectorAll('.itemSolo')
             itenSolo.forEach((elemento)=>{
                 elemento.addEventListener('click',()=>{
-                    itensMenu.classList.remove('mostrar');
-                    itensMenu.classList.add('ocultar');
+                    itensMenu.classList.toggle('mostrar');
                 })
             })
         })

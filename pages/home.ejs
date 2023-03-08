@@ -1,4 +1,3 @@
-
 <%- include('partials/header.ejs') %>
 
 <section class="noticia-destaque">
@@ -51,14 +50,12 @@
                     <% for(let i = 0; i < postsTop.length; i++) { %>
                         <div class="mais-lida-noticia-single">
                             <img src="<%= postsTop[i].imagem %>"/>
-
                             <div class="texto-mais-lida-single">
                                 <a href="<%= postsTop[i].slug %>">
                                     <h4><%= postsTop[i].titulo %></h4>
                                 </a>
                                 <p><%= postsTop[i].descricaoCurta %>...<span> (<%= postsTop[i].views %>)views</span></p>
                             </div>
-
                         </div>
                     <% } %>
                     
@@ -90,4 +87,3 @@
 
 
 <%- include('partials/footer.ejs') %>
-

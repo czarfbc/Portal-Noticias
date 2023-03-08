@@ -122,15 +122,6 @@ app.post('/admin/login', (req, res) => {
     res.redirect('/admin/login')
 })
 
-
-app.get('/admin/login', (req, res) => {
-    if(req.session.login == null) {
-        res.render('admin-login');
-    }else{
-         res.render('admin-painel');
-    }
-})
-
 app.post('/admin/cadastro', (req, res) => {
 
     Posts.create({
@@ -145,6 +136,36 @@ app.post('/admin/cadastro', (req, res) => {
     
     res.redirect('back')
 })
+
+app.get('/admin/deletar/:id', (req, res) => {
+    Posts.deleteOne({_id:req.params.id}).then(() => {
+        res.redirect('/admin/login')
+    });
+})
+
+
+app.get('/admin/login', (req, res) => {
+    if(req.session.login == null) {
+        res.render('admin-login');
+    }else{
+        Posts.find({}).sort({'_id': -1}).exec(function(err,posts){
+            posts = posts.map(function(val){
+                return {
+                    id: val._id,
+                    titulo: val.titulo,
+                    conteudo: val.conteudo,
+                    descricaoCurta: val.conteudo.substr(0,100),
+                    imagem: val.imagem,
+                    slug: val.slug,
+                    categoria: val.categoria,
+                }
+            })
+            res.render('admin-painel',{posts:posts});
+        })
+    }
+})
+
+
 
 
 app.listen(5000, () => {

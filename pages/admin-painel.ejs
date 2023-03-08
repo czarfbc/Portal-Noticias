@@ -56,14 +56,15 @@
             <ul>
                 <li>
 
+                    <% for (let i = 0; i < posts.length; i++) { %>
                     <div class="lista-noticia-single">
-                        <p><strong>TITULO: </strong>CAPA CAPA XANDAO</p>
+                        <p><strong>TITULO: </strong><%= posts[i].titulo %></p>
                         <div class="links-acao-noticia-single">
                             <a href="/admin/editar/10" title="EDITAR"><i class="fa-solid fa-pen"></i></a>
-                            <a href="/admin/deletar/10" title="EXCLUIR"><i class="fa-solid fa-trash"></i></a>
+                            <a href="/admin/deletar/<%= posts[i].id %>" title="EXCLUIR"><i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
-                   
+                    <% } %>
                 </li>
             </ul>
         </div>
@@ -83,8 +84,7 @@
             const itenSolo = document.querySelectorAll('.itemSolo')
             itenSolo.forEach((elemento)=>{
                 elemento.addEventListener('click',()=>{
-                    itensMenu.classList.remove('mostrar');
-                    itensMenu.classList.add('ocultar');
+                    itensMenu.classList.toggle('mostrar');
                 })
             })
         })
