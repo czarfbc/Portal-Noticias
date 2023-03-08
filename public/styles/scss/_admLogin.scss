@@ -1,0 +1,77 @@
+form.form_login_admin
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 2rem;
+    gap: 3rem;
+
+    box-shadow: 0 0 15px 3px #000;
+    background-color: rgb(49, 47, 47);
+
+    h1 
+    {
+        color: #fff;
+        font-size: 3rem;
+        margin: 1rem 2rem;
+    }
+
+    .user_area
+    {
+        display: flex;
+        gap: 1rem;
+
+        label{cursor: pointer;}
+        i 
+        {
+            margin-top: 50%;
+            color: #868686;
+            font-size: 2.5rem;
+        }
+        i:hover{color: #fff;}
+    
+        input
+        {
+            height: 3.5rem;
+            width: 20rem;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid #acabab;
+            background-color: #00000000;
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        input:hover::placeholder{color: #fff;}
+        input:hover{border-bottom-color: #fff;}
+        input:focus{border-bottom-color: #fff;}
+       
+    }
+    input {margin-bottom: 2rem;}
+    input[type="submit"]
+    {
+        border: none;
+        background-color: rgba(10, 172, 220, 1);
+        color: #fff;
+        font-weight: 700;
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        width: 80%;
+        border-radius: 10px;
+        transition: all 80ms;
+    }
+    input[type="submit"]:hover
+    {
+        background-color: rgba(10, 172, 220, 0.81);
+        transform: scale(1.07);
+        font-size: 2.3rem;
+    }
+}

@@ -86,10 +86,9 @@ app.get('/', (req, res) => {
                     }
                 })
                 res.render('busca', {posts: posts, postsCategoria: postsCategoria, countTotal: posts.length + postsCategoria.length}); 
-            }) 
-            // res.render('busca', {posts: posts, count: posts.length});
-            
-        }).sort({'_id': -1});
+            }).sort({'_id': -1});
+            // res.render('busca', {posts: posts, count: posts.length});         
+        })
         
     } 
 });
