@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
+const fs = require('fs');
+const fileupload = require('express-fileupload')
 
 const app = express();
 const Posts = require('./Posts.js');
@@ -14,6 +16,11 @@ const urlDatabase = 'mongodb+srv://root:fera1020@cluster0.xlmnqqp.mongodb.net/ne
 
 app.use( bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true})); 
+
+app.use(fileupload({
+    useTempFiles: true,
+    tempFileDir: path.join(__dirname, 'temp')
+}));
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
@@ -137,9 +144,19 @@ app.post('/admin/login', (req, res) => {
 
 app.post('/admin/cadastro', (req, res) => {
 
+    let format = req.files.arquivo.name.split('.');
+    let image = '';
+
+    if(format[format.length - 1] == 'jpg' || format[format.length - 1] == 'png') {
+        image = `${new Date().getTime()+req.files.arquivo.name}`;
+        req.files.arquivo.mv(`${__dirname}/public/images/${image}`)
+    }else {
+        fs.unlinkSync(req.files.arquivo.tempFilePath);
+    }
+
     Posts.create({
         titulo: req.body.titulo_noticia,
-        imagem: req.body.url_imagem,
+        imagem: `http://localhost:5000/public/images/${image}`,
         categoria: req.body.categoria_noticia,
         conteudo: req.body.noticia,
         slug: req.body.slug_cadastro_noticia,

@@ -25,9 +25,9 @@
             <h1>CADASTRAR NOTICIA</h1>
         </div>
 
-        <form method="post" action="/admin/cadastro" class="form-publicar">
+        <form enctype="multipart/form-data" method="post" action="/admin/cadastro" class="form-publicar">
             <input type="text" name="titulo_noticia" placeholder="Titulo da Noticia" required>
-            <input type="text" name="url_imagem" placeholder="Link da Imagem da Noticia" required>
+            <input id="add_file_btn" type="file" name="arquivo" required>
             <input type="text" name="slug_cadastro_noticia" placeholder="Slug da Noticia" required>
             <input type="text" name="categoria_noticia" placeholder="Categoria da Noticia" required>
             <input type="text" name="autor_noticia" placeholder="Autor da Noticia" required>
