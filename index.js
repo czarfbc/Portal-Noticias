@@ -7,10 +7,9 @@ const fileupload = require('express-fileupload')
 
 const app = express();
 const Posts = require('./Posts.js');
+const urlDatabase = require('./urlDatabase.js');
 
 var session = require('express-session')
-
-const urlDatabase = 'mongodb+srv://root:fera1020@cluster0.xlmnqqp.mongodb.net/news?retryWrites=true&w=majority';
 
 
 
